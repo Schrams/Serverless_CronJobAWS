@@ -1,0 +1,22 @@
+service: execucio_periodica_lambda_tutorial
+
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-west-1
+  memorySize: 128
+  executionTime: 1
+
+
+
+functions:
+  funcio_cada_5_min:
+    handler: handler.funcio_cada_5_min
+    events:
+      - schedule: rate(50 minutes)
+
+  funcio_cada_dia_12PM:
+    handler: handler.funcio_cada_dia_12PM
+    events:
+      - schedule: cron(0 12 * * ? *)
