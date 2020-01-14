@@ -1,18 +1,30 @@
 'use strict';
 
-module.exports.funcio_cada_5_min = async event => {
+module.exports.FuncioCada50min = async event => {
   return {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: 'Go Serverless v1.0! Your function executed successfully!',
+        message: 'Aquesta funció s executa cada 50 minuts de manera automàtica!',
         input: event,
       },
       null,
       2
     ),
   };
+};
 
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
+
+module.exports.funcioCadaDia12PM = async event => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify(
+      {
+        message: 'Aquesta funció s executa cada dia a les 12 del matí',
+        input: event,
+      },
+      null,
+      2
+    ),
+  };
 };
